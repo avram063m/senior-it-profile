@@ -34,14 +34,14 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
-      value: "contact@milosavramovic.com",
-      href: "mailto:contact@milosavramovic.com",
+      value: "milos.avramovic@live.com",
+      href: "mailto:milos.avramovic@live.com",
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      value: "linkedin.com/in/milosavramovic",
-      href: "https://linkedin.com/in/milosavramovic",
+      value: "LinkedIn Profile",
+      href: "https://www.linkedin.com/in/milos-avramovic-5424ab30",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
