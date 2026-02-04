@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Server, Cloud, Shield, Database, ChevronRight } from "lucide-react";
 import SkillDetailModal from "./SkillDetailModal";
+import VirtualizationCloudModal from "./VirtualizationCloudModal";
 
 interface SkillCategoryProps {
   icon: React.ReactNode;
@@ -42,7 +43,8 @@ const SkillCategory = ({ icon, title, skills, onClick, isClickable }: SkillCateg
 );
 
 const Skills = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInfraModalOpen, setIsInfraModalOpen] = useState(false);
+  const [isCloudModalOpen, setIsCloudModalOpen] = useState(false);
 
   const skillCategories = [
     {
@@ -53,6 +55,7 @@ const Skills = () => {
         "Linux Administration: Debian, Red Hat, CentOS",
       ],
       isClickable: true,
+      onClickHandler: () => setIsInfraModalOpen(true),
     },
     {
       icon: <Cloud className="h-6 w-6" />,
@@ -62,6 +65,8 @@ const Skills = () => {
         "Hyper-V",
         "Microsoft Azure, Microsoft 365 / Office 365",
       ],
+      isClickable: true,
+      onClickHandler: () => setIsCloudModalOpen(true),
     },
     {
       icon: <Shield className="h-6 w-6" />,
@@ -99,15 +104,19 @@ const Skills = () => {
             {skillCategories.map((category, index) => (
               <SkillCategory 
                 key={index} 
-                {...category} 
-                onClick={category.isClickable ? () => setIsModalOpen(true) : undefined}
+                icon={category.icon}
+                title={category.title}
+                skills={category.skills}
+                isClickable={category.isClickable}
+                onClick={category.onClickHandler}
               />
             ))}
           </div>
         </div>
       </section>
 
-      <SkillDetailModal open={isModalOpen} onOpenChange={setIsModalOpen} />
+      <SkillDetailModal open={isInfraModalOpen} onOpenChange={setIsInfraModalOpen} />
+      <VirtualizationCloudModal open={isCloudModalOpen} onOpenChange={setIsCloudModalOpen} />
     </>
   );
 };
