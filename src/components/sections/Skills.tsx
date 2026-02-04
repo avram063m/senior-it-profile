@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Server, Cloud, Shield, Database, ChevronRight } from "lucide-react";
 import SkillDetailModal from "./SkillDetailModal";
 import VirtualizationCloudModal from "./VirtualizationCloudModal";
+import NetworkingSecurityModal from "./NetworkingSecurityModal";
 
 interface SkillCategoryProps {
   icon: React.ReactNode;
@@ -45,6 +46,7 @@ const SkillCategory = ({ icon, title, skills, onClick, isClickable }: SkillCateg
 const Skills = () => {
   const [isInfraModalOpen, setIsInfraModalOpen] = useState(false);
   const [isCloudModalOpen, setIsCloudModalOpen] = useState(false);
+  const [isNetworkModalOpen, setIsNetworkModalOpen] = useState(false);
 
   const skillCategories = [
     {
@@ -76,6 +78,8 @@ const Skills = () => {
         "MikroTik RouterOS, IPsec",
         "System hardening & access management",
       ],
+      isClickable: true,
+      onClickHandler: () => setIsNetworkModalOpen(true),
     },
     {
       icon: <Database className="h-6 w-6" />,
@@ -117,6 +121,7 @@ const Skills = () => {
 
       <SkillDetailModal open={isInfraModalOpen} onOpenChange={setIsInfraModalOpen} />
       <VirtualizationCloudModal open={isCloudModalOpen} onOpenChange={setIsCloudModalOpen} />
+      <NetworkingSecurityModal open={isNetworkModalOpen} onOpenChange={setIsNetworkModalOpen} />
     </>
   );
 };
