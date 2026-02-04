@@ -3,6 +3,7 @@ import { Server, Cloud, Shield, Database, ChevronRight } from "lucide-react";
 import SkillDetailModal from "./SkillDetailModal";
 import VirtualizationCloudModal from "./VirtualizationCloudModal";
 import NetworkingSecurityModal from "./NetworkingSecurityModal";
+import BackupMonitoringModal from "./BackupMonitoringModal";
 
 interface SkillCategoryProps {
   icon: React.ReactNode;
@@ -47,6 +48,7 @@ const Skills = () => {
   const [isInfraModalOpen, setIsInfraModalOpen] = useState(false);
   const [isCloudModalOpen, setIsCloudModalOpen] = useState(false);
   const [isNetworkModalOpen, setIsNetworkModalOpen] = useState(false);
+  const [isBackupModalOpen, setIsBackupModalOpen] = useState(false);
 
   const skillCategories = [
     {
@@ -88,6 +90,8 @@ const Skills = () => {
         "Veeam Backup & Disaster Recovery",
         "Microsoft SCOM",
       ],
+      isClickable: true,
+      onClickHandler: () => setIsBackupModalOpen(true),
     },
   ];
 
@@ -122,6 +126,7 @@ const Skills = () => {
       <SkillDetailModal open={isInfraModalOpen} onOpenChange={setIsInfraModalOpen} />
       <VirtualizationCloudModal open={isCloudModalOpen} onOpenChange={setIsCloudModalOpen} />
       <NetworkingSecurityModal open={isNetworkModalOpen} onOpenChange={setIsNetworkModalOpen} />
+      <BackupMonitoringModal open={isBackupModalOpen} onOpenChange={setIsBackupModalOpen} />
     </>
   );
 };
