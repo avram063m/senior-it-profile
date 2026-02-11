@@ -39,9 +39,11 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4">
-            <Button variant="hero" size="xl">
-              <Download className="h-5 w-5" />
-              Download CV
+            <Button variant="hero" size="xl" asChild>
+              <a href="/CV_Milos_Avramovic_Eng.pdf" download>
+                <Download className="h-5 w-5" />
+                Download CV
+              </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
               <a href="#contact">
