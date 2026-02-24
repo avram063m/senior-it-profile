@@ -73,6 +73,7 @@ const Experience = () => {
         "Network design (LAN, VLAN, VPN, firewalls)",
         "20+ infrastructure projects completed",
         "400+ workstations and 200+ servers deployed",
+        "Mac OS administration",
       ],
     },
     {
