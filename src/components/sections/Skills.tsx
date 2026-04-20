@@ -57,6 +57,7 @@ const Skills = () => {
       skills: [
         "Windows Server (2012–2025): AD, DNS, DHCP, DFS, IIS, WSUS",
         "Linux Administration: Debian, Red Hat, CentOS",
+        "macOS Administration",
       ],
       isClickable: true,
       onClickHandler: () => setIsInfraModalOpen(true),
