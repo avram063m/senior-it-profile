@@ -63,6 +63,13 @@ const skillGroups: SkillGroup[] = [
       { name: "Linux Server Management", level: 4, description: "Installing and securing Linux-based servers (Debian, Red Hat, CentOS)", icon: <Server className="h-4 w-4" /> },
     ],
   },
+  {
+    title: "macOS Administration",
+    icon: <Server className="h-5 w-5" />,
+    skills: [
+      { name: "macOS Administration", level: 6, description: "Managing and supporting macOS devices in enterprise environments", icon: <Server className="h-4 w-4" /> },
+    ],
+  },
 ];
 
 const getLevelColor = (level: number): string => {
